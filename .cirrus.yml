@@ -488,7 +488,7 @@ task:
   configure_script:
     - C:\msys64\usr\bin\bash.exe -lc "mkdir %BUILD_DIR% &&
       cd %BUILD_DIR% &&
-      dash %CIRRUS_WORKING_DIR%/configure
+      %CIRRUS_WORKING_DIR%/configure
         --enable-cassert
         --enable-tap-tests
         --with-icu
