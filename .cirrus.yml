@@ -488,7 +488,7 @@ task:
   configure_script:
     - C:\msys64\usr\bin\bash.exe -lc "mkdir %BUILD_DIR% &&
       cd %BUILD_DIR% &&
-      %CIRRUS_WORKING_DIR%/configure
+      dash %CIRRUS_WORKING_DIR%/configure
         --enable-cassert
         --enable-tap-tests
         --with-icu
@@ -497,7 +497,9 @@ task:
         --with-lz4
         --enable-debug
         CC='ccache gcc'
-        CXX='ccache g++'"
+        CXX='ccache g++'
+        CFLAGS=-Og
+        CXXFLAGS=-Og"
 
   build_script:
     C:\msys64\usr\bin\bash.exe -lc "cd %BUILD_DIR% && make -s world-bin -j${CPUS}"
