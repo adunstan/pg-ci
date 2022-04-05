@@ -482,7 +482,8 @@ task:
     - C:\msys64\usr\bin\bash.exe -lc "gcc --version"
     - C:\msys64\usr\bin\bash.exe -lc "where perl"
     - C:\msys64\usr\bin\bash.exe -lc "perl --version"
-    - C:\msys64\usr\bin\bash.exe -lc "where prove
+    - C:\msys64\usr\bin\bash.exe -lc "where prove"
+    - C:\msys64\usr\bin\bash.exe -lc "printenv"
 
   configure_script:
     - C:\msys64\usr\bin\bash.exe -lc "mkdir %BUILD_DIR% &&
