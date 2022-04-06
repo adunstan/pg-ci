@@ -23,6 +23,7 @@ env:
   CHECKFLAGS: -Otarget
   PROVE_FLAGS: --timer
   PGCTLTIMEOUT: 120 # avoids spurious failures during parallel tests
+  TEMP_CONFIG: ${CIRRUS_WORKING_DIR}/src/tools/ci/pg_ci_base.conf
   PG_TEST_EXTRA: kerberos ldap ssl
 
 
@@ -483,7 +484,7 @@ task:
     - C:\msys64\usr\bin\bash.exe -lc "where perl"
     - C:\msys64\usr\bin\bash.exe -lc "perl --version"
     - C:\msys64\usr\bin\bash.exe -lc "where prove"
-    - C:\msys64\usr\bin\bash.exe -lc "printenv"
+    - C:\msys64\usr\bin\bash.exe -lc "printenv | sort"
 
   configure_script:
     - C:\msys64\usr\bin\bash.exe -lc "mkdir %BUILD_DIR% &&
