@@ -489,7 +489,7 @@ task:
   configure_script:
     - C:\msys64\usr\bin\bash.exe -lc "mkdir %BUILD_DIR% &&
       cd %BUILD_DIR% &&
-      %CIRRUS_WORKING_DIR%/configure
+      dash %CIRRUS_WORKING_DIR%/configure
         --enable-cassert
         --enable-tap-tests
         --with-icu
@@ -497,6 +497,7 @@ task:
         --with-libxslt
         --with-lz4
         --enable-debug
+        --with-includes  '/ucrt64/include/libxml2 /c/cirrus/src/include/port/win32'
         CC='ccache gcc'
         CXX='ccache g++'
         CFLAGS=-Og
