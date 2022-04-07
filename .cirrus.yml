@@ -204,7 +204,7 @@ task:
         CXX="ccache g++" \
         CLANG="ccache clang" \
         CFLAGS="-Og -ggdb" \
-        CXXFLAGS="-Og -ggd"
+        CXXFLAGS="-Og -ggdb"
     EOF
   build_script: su postgres -c "make -s -j${BUILD_JOBS} world-bin"
   upload_caches: ccache
@@ -501,7 +501,6 @@ task:
         CXX='ccache g++'
         CFLAGS=-Og
         CXXFLAGS=-Og"
-    - false
 
   build_script:
     C:\msys64\usr\bin\bash.exe -lc "cd %BUILD_DIR% && make -s world-bin -j${CPUS}"
