@@ -497,7 +497,7 @@ task:
         --with-libxslt
         --with-lz4
         --enable-debug
-        --with-includes  '/ucrt64/include/libxml2 /c/cirrus/src/include/port/win32'
+        --with-includes='/ucrt64/include/libxml2 /c/cirrus/src/include/port/win32'
         CC='ccache gcc'
         CXX='ccache g++'
         CFLAGS=-Og
